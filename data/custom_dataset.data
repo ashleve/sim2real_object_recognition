@@ -1,0 +1,4 @@
+classes=10
+train=data/yolo_dataset/train_set.txt
+valid=data/yolo_dataset/test_set.txt
+names=data/yolo_dataset/classes.names

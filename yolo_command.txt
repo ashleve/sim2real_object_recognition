@@ -1,0 +1,2 @@
+python train.py --data custom_dataset.data --cfg yolov3-tiny.cfg --weights weights/yolov3-tiny.pt
+python  -c "from models import *; convert('cfg/yolov3-tiny.cfg', 'weights/best.pt')"

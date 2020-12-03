@@ -9,6 +9,8 @@ path_class_names = os.path.join(dataset_path, "Dataset32a6aec8-8797-4785-af76-43
 path_bounding_boxes = os.path.join(dataset_path, "Dataset32a6aec8-8797-4785-af76-43e1ff8d92fe/captures_000.json")
 new_yolo_dataset_path = "data/yolo_dataset"
 
+size_x, size_y = 1061, 564
+
 
 # load class names
 with open(path_class_names, "r") as json_file:
@@ -47,9 +49,13 @@ new_yolo_dataset_img_path = new_yolo_dataset_path + "/images"
 if not os.path.exists(new_yolo_dataset_img_path):
     os.makedirs(new_yolo_dataset_img_path)
 
+new_yolo_dataset_labels_path = new_yolo_dataset_path + "/labels"
+if not os.path.exists(new_yolo_dataset_labels_path):
+    os.makedirs(new_yolo_dataset_labels_path)
+
 
 # generate class name info file
-with open(os.path.join(new_yolo_dataset_path, "class_names.txt"), "w") as class_names_file:
+with open(os.path.join(new_yolo_dataset_path, "classes.names"), "w") as class_names_file:
     for class_name in class_names:
         class_names_file.write(class_name + '\n')
 
@@ -63,14 +69,15 @@ for path in img_paths:
     
     src_path = dataset_path + '/' + path
     dst_path_img = new_yolo_dataset_img_path + '/' + img_name
-    dst_path_txt = new_yolo_dataset_img_path + '/' + txt_name
+    dst_path_txt = new_yolo_dataset_labels_path + '/' + txt_name
 
     shutil.copy(src_path, dst_path_img)
     new_img_paths.append(dst_path_img)
 
     with open(dst_path_txt, "w") as txt_file:
         for bbox in bounding_boxes[path]:
-            label = str(bbox[0]) + " " + str(bbox[1]) + " " + str(bbox[2]) + " " + str(bbox[3]) + " " + str(bbox[4])
+            label = str(bbox[0] - 1) + " " + str(bbox[1] / size_x) + " " + str(bbox[2] / size_y) \
+                    + " " + str(bbox[3] / size_x) + " " + str(bbox[4] / size_y)
             txt_file.write(label + "\n")
 
     i += 1

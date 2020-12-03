@@ -5,9 +5,11 @@ from matplotlib import patches
 
 path = "data/yolo_dataset/train_set.txt"
 
+size_x, size_y = 1061, 564
+
 with open(path, "r") as file:
     img_path = file.readline().replace("\n", "")
-    txt_path = img_path.rsplit('.', 1)[0] + '.txt'
+    txt_path = path.rsplit('/', 1)[0] + "/labels/" + (img_path.rsplit('.', 1)[0] + '.txt').rsplit('/', 1)[-1]
 
 with open(txt_path, "r") as file:
     bboxes = file.readlines()
@@ -31,9 +33,9 @@ ax.imshow(img)
 
 for bbox in bounding_boxes:
     rect = patches.Rectangle(
-        (bbox[1], bbox[2]),
-        bbox[3],
-        bbox[4],
+        (bbox[1] * size_x, bbox[2] * size_y),
+        bbox[3] * size_x,
+        bbox[4] * size_y,
         linewidth=2,
         edgecolor='r',
         facecolor='none'
