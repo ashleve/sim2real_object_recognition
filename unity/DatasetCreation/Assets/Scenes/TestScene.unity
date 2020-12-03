@@ -352,6 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168063614}
   - component: {fileID: 1168063613}
+  - component: {fileID: 1168063615}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -434,6 +435,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45.43, y: -23.5, z: 0}
+--- !u!114 &1168063615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168063612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446c057f06aa44f40bc454d12e6a8555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1223094040
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +576,7 @@ MonoBehaviour:
   - id: 2
   - id: 3
   - id: 4
+  - id: 5
   quitOnComplete: 1
   serializedConstantsFileName: constants
   constants:
@@ -597,7 +611,7 @@ MonoBehaviour:
           - 0.1
           uniform: 1
           m_Sampler:
-            id: 5
+            id: 6
           m_Categories:
           - {fileID: 6030332796725836435, guid: 7dd7f1e1f85b04c908d48829d22f4f8b, type: 3}
           - {fileID: 6016821248533432811, guid: 95c2ed58ec23643a698c890a152f30c8, type: 3}
@@ -613,7 +627,7 @@ MonoBehaviour:
       type: {class: TextureRandomizer, ns: UnityEngine.Experimental.Perception.Randomization.Randomizers.SampleRandomizers,
         asm: Unity.Perception.Runtime}
       data:
-        collapsed: 0
+        collapsed: 1
         <enabled>k__BackingField: 1
         texture:
           collapsed: 0
@@ -625,7 +639,7 @@ MonoBehaviour:
           - 0.2
           uniform: 1
           m_Sampler:
-            id: 6
+            id: 7
           m_Categories:
           - {fileID: 2800000, guid: 990a4855e227e5941b2999aa9f130e02, type: 3}
           - {fileID: 2800000, guid: aed97010fba7f6d49a0a91e4af72f308, type: 3}
@@ -641,12 +655,12 @@ MonoBehaviour:
         hueOffset:
           collapsed: 0
           value:
-            id: 7
+            id: 8
     00000003:
       type: {class: ForegroundObjectPlacementRandomizer, ns: UnityEngine.Experimental.Perception.Randomization.Randomizers.SampleRandomizers,
         asm: Unity.Perception.Runtime}
       data:
-        collapsed: 0
+        collapsed: 1
         <enabled>k__BackingField: 1
         depth: -4
         separationDistance: 1
@@ -666,7 +680,7 @@ MonoBehaviour:
           - 0.1
           uniform: 1
           m_Sampler:
-            id: 8
+            id: 9
           m_Categories:
           - {fileID: 2773633367666246751, guid: f8c81fac8af13448ab26bdb5ce582c9b, type: 3}
           - {fileID: 2400950709556236671, guid: 04ab9ebb2655c44ae9e9edebd2c9d32c, type: 3}
@@ -687,12 +701,39 @@ MonoBehaviour:
         rotation:
           collapsed: 0
           x:
-            id: 9
-          y:
             id: 10
-          z:
+          y:
             id: 11
+          z:
+            id: 12
     00000005:
+      type: {class: MyLightRandomizer, ns: , asm: Assembly-CSharp}
+      data:
+        collapsed: 0
+        <enabled>k__BackingField: 1
+        lightIntensityParameter:
+          collapsed: 0
+          value:
+            id: 13
+        lightColorParameter:
+          collapsed: 0
+          red:
+            id: 14
+          green:
+            id: 15
+          blue:
+            id: 16
+          alpha:
+            id: 17
+        rotation:
+          collapsed: 0
+          x:
+            id: 18
+          y:
+            id: 19
+          z:
+            id: 20
+    00000006:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
@@ -700,7 +741,7 @@ MonoBehaviour:
         <range>k__BackingField:
           minimum: 0
           maximum: 1
-    00000006:
+    00000007:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
@@ -708,7 +749,7 @@ MonoBehaviour:
         <range>k__BackingField:
           minimum: 0
           maximum: 1
-    00000007:
+    00000008:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
@@ -716,7 +757,7 @@ MonoBehaviour:
         <range>k__BackingField:
           minimum: -180
           maximum: 180
-    00000008:
+    00000009:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
@@ -724,7 +765,7 @@ MonoBehaviour:
         <range>k__BackingField:
           minimum: 0
           maximum: 1
-    00000009:
+    0000000A:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
@@ -732,7 +773,7 @@ MonoBehaviour:
         <range>k__BackingField:
           minimum: 0
           maximum: 360
-    0000000A:
+    0000000B:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
@@ -740,7 +781,7 @@ MonoBehaviour:
         <range>k__BackingField:
           minimum: 0
           maximum: 360
-    0000000B:
+    0000000C:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
@@ -748,6 +789,67 @@ MonoBehaviour:
         <range>k__BackingField:
           minimum: 0
           maximum: 360
+    0000000D:
+      type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        <baseSeed>k__BackingField: 2297755392
+        <range>k__BackingField:
+          minimum: 0.5
+          maximum: 3
+    0000000E:
+      type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        <baseSeed>k__BackingField: 539662031
+        <range>k__BackingField:
+          minimum: 0.4
+          maximum: 1
+    0000000F:
+      type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        <baseSeed>k__BackingField: 539662031
+        <range>k__BackingField:
+          minimum: 0.4
+          maximum: 1
+    00000010:
+      type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        <baseSeed>k__BackingField: 539662031
+        <range>k__BackingField:
+          minimum: 0.4
+          maximum: 1
+    00000011:
+      type: {class: ConstantSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        value: 1
+    00000012:
+      type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        <baseSeed>k__BackingField: 539662031
+        <range>k__BackingField:
+          minimum: 45
+          maximum: 50
+    00000013:
+      type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        <baseSeed>k__BackingField: 539662031
+        <range>k__BackingField:
+          minimum: 0
+          maximum: 360
+    00000014:
+      type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
+        asm: Unity.Perception.Runtime}
+      data:
+        <baseSeed>k__BackingField: 539662031
+        <range>k__BackingField:
+          minimum: 0
+          maximum: 0
 --- !u!4 &1301003698
 Transform:
   m_ObjectHideFlags: 0
@@ -776,7 +878,7 @@ GameObject:
   - component: {fileID: 1788425042}
   - component: {fileID: 1788425045}
   m_Layer: 0
-  m_Name: Wall3
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
