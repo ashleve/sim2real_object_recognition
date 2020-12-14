@@ -20,6 +20,11 @@ public class MyLightRandomizer : Randomizer
     protected override void OnIterationStart()
     {
         var taggedObjects = tagManager.Query<MyLightRandomizerTag>();
+        var taggedBackgroundObjects = tagManager.Query<MyLightBackgroundRandomizerTag>();
+
+        int k_BaseColor = Shader.PropertyToID("_BaseColor");
+
+        float intensity = lightIntensityParameter.Sample();
 
         foreach (var taggedObject in taggedObjects)
         {
@@ -27,8 +32,17 @@ public class MyLightRandomizer : Randomizer
             var direction = taggedObject.GetComponent<Transform>();
 
             taggedObject.transform.rotation = Quaternion.Euler(rotation.Sample());
-            light.intensity = lightIntensityParameter.Sample(); 
+            light.intensity = intensity; 
             light.color = lightColorParameter.Sample();           
         }
+
+        float intensityMapped = intensity / 6 + 0.5f;
+
+        foreach (var taggedBackgroundObject in taggedBackgroundObjects)
+        {
+            var meshRenderer = taggedBackgroundObject.GetComponent<MeshRenderer>();
+            meshRenderer.material.SetColor(k_BaseColor, new Color(intensityMapped, intensityMapped, intensityMapped, 1));
+        }
+
     }
 }
