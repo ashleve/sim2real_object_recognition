@@ -3,11 +3,15 @@ import matplotlib.image as mpimg
 from matplotlib import patches
 
 
-path = "data/yolo_dataset/train_set.txt"
+path = "data/dino_yolo_dataset/train_set.txt"
 
 with open(path, "r") as file:
     img_path = file.readline().replace("\n", "")
+    img_path = file.readline().replace("\n", "")
+    img_path = file.readline().replace("\n", "")
+    img_path = file.readline().replace("\n", "")
     txt_path = img_path.rsplit('.', 1)[0] + '.txt'
+    txt_path = txt_path.replace("images", "labels")
 
 with open(txt_path, "r") as file:
     bboxes = file.readlines()
