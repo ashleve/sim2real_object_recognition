@@ -1,3 +1,5 @@
 python train.py --data custom_dataset.data --cfg yolov3-tiny.cfg --weights weights/yolov3-tiny.pt
 python  -c "from models import *; convert('cfg/yolov3-tiny.cfg', 'weights/best.pt')"
 python detect.py --cfg cfg/yolov3-tiny.cfg --weights weights/best.pt --source data/yolo_dataset/images/57.png --names data/yolo_dataset/classes.names
+
+python train.py --cfg yolov3-tiny.yaml  --weights weights/yolov3-tiny.pt --data dataset.yaml --batch-size 32 --workers 6
