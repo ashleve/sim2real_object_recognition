@@ -654,7 +654,7 @@ MonoBehaviour:
       type: {class: HueOffsetRandomizer, ns: UnityEngine.Experimental.Perception.Randomization.Randomizers.SampleRandomizers,
         asm: Unity.Perception.Runtime}
       data:
-        collapsed: 1
+        collapsed: 0
         <enabled>k__BackingField: 1
         hueOffset:
           collapsed: 0
@@ -742,8 +742,8 @@ MonoBehaviour:
       data:
         <baseSeed>k__BackingField: 2297755392
         <range>k__BackingField:
-          minimum: 0.5
-          maximum: 3
+          minimum: 1
+          maximum: 5.5
     00000007:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}

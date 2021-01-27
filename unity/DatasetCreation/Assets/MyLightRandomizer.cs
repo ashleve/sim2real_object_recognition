@@ -36,7 +36,7 @@ public class MyLightRandomizer : Randomizer
             light.color = lightColorParameter.Sample();           
         }
 
-        float intensityMapped = intensity / 6 + 0.5f;
+        float intensityMapped = intensity / 6 + 0.2f;
 
         foreach (var taggedBackgroundObject in taggedBackgroundObjects)
         {
