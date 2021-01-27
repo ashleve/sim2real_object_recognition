@@ -654,7 +654,7 @@ MonoBehaviour:
       type: {class: HueOffsetRandomizer, ns: UnityEngine.Experimental.Perception.Randomization.Randomizers.SampleRandomizers,
         asm: Unity.Perception.Runtime}
       data:
-        collapsed: 0
+        collapsed: 1
         <enabled>k__BackingField: 1
         hueOffset:
           collapsed: 0
@@ -748,9 +748,9 @@ MonoBehaviour:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
-        <baseSeed>k__BackingField: 539662031
+        <baseSeed>k__BackingField: 449112022
         <range>k__BackingField:
-          minimum: 0.4
+          minimum: 0.5
           maximum: 1
     00000008:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
@@ -758,15 +758,15 @@ MonoBehaviour:
       data:
         <baseSeed>k__BackingField: 539662031
         <range>k__BackingField:
-          minimum: 0.4
+          minimum: 0.5
           maximum: 1
     00000009:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
         asm: Unity.Perception.Runtime}
       data:
-        <baseSeed>k__BackingField: 539662031
+        <baseSeed>k__BackingField: 931112037
         <range>k__BackingField:
-          minimum: 0.4
+          minimum: 0.5
           maximum: 1
     0000000A:
       type: {class: ConstantSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
