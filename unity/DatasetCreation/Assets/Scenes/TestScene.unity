@@ -750,7 +750,7 @@ MonoBehaviour:
       data:
         <baseSeed>k__BackingField: 449112022
         <range>k__BackingField:
-          minimum: 0.5
+          minimum: 0.85
           maximum: 1
     00000008:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
@@ -758,7 +758,7 @@ MonoBehaviour:
       data:
         <baseSeed>k__BackingField: 539662031
         <range>k__BackingField:
-          minimum: 0.5
+          minimum: 0.85
           maximum: 1
     00000009:
       type: {class: UniformSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
@@ -766,7 +766,7 @@ MonoBehaviour:
       data:
         <baseSeed>k__BackingField: 931112037
         <range>k__BackingField:
-          minimum: 0.5
+          minimum: 0.85
           maximum: 1
     0000000A:
       type: {class: ConstantSampler, ns: UnityEngine.Experimental.Perception.Randomization.Samplers,
