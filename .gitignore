@@ -132,3 +132,4 @@ dmypy.json
 /data
 bbox_example.png
 requirements.txt
+yolo/data
