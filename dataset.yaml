@@ -3,12 +3,10 @@ train: data/yolo_dataset/train_set.txt
 val: data/yolo_dataset/test_set.txt
 
 # number of classes
-nc: 4
+nc: 2
 
 # class names
 names: [
-  "cereal_cheerios_honeynut",
-  "cleaning_snuggle_henkel",
-  "drink_whippingcream_lucerne",
-  "dino"
+  "x",
+  "dino",
 ]

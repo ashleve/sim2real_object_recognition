@@ -4,13 +4,13 @@ import json
 import os
 
 
-dataset_path = "data/dino_dataset"
-labels_path = os.path.join(dataset_path, "Dataseta58e9708-e029-490b-8e60-437a2864099f")
+dataset_path = "data/unity_dataset"
+labels_path = os.path.join(dataset_path, "Dataset5fb6ba1c-6955-49c1-8fdb-9f59db13fe05")
 path_class_names = os.path.join(labels_path, "annotation_definitions.json")
 path_captures = os.path.join(labels_path, "captures_")
 new_yolo_dataset_path = "data/yolo_dataset"
 
-size_x, size_y = 690, 605
+size_x, size_y = 640, 640
 
 
 # load class names
@@ -52,7 +52,8 @@ def convert(path_bounding_boxes, start_index):
 
         bounding_boxes[filename] = []
         for bbox in element['annotations'][0]['values']:
-            tmp = [bbox['label_id'], (bbox['x'] + bbox['width']/2) / size_x, (bbox['y'] + bbox['height']/2) / size_y, bbox['width'] / size_x, bbox['height'] / size_y]
+            # tmp = [bbox['label_id'], (bbox['x'] + bbox['width']/2) / size_x, (bbox['y'] + bbox['height']/2) / size_y, bbox['width'] / size_x, bbox['height'] / size_y]
+            tmp = ["0", (bbox['x'] + bbox['width']/2) / size_x, (bbox['y'] + bbox['height']/2) / size_y, bbox['width'] / size_x, bbox['height'] / size_y]
             bounding_boxes[filename].append(tmp)
 
     print("num of images:", len(img_paths))

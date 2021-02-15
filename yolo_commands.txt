@@ -1,0 +1,5 @@
+# TRAIN
+python train.py --cfg yolov3-tiny.yaml  --weights weights/yolov3-tiny.pt --data dataset.yaml --batch-size 16 --workers 4
+
+# DETECT
+python detect.py --source data/images --weights best.pt --conf 0.25
